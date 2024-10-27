@@ -5,7 +5,8 @@ set -eu
 
 srcdir="$PWD"
 target_arch="aarch64 x86_64 armv7l"
-cross_make_ver=0.9.10
+#cross_make_ver="v0.9.10"
+cross_make_ver="e149c31c48b4f4a4c9349ddf7bc0027b90245afc"
 cross_make_dir="$srcdir/musl-cross-make-${cross_make_ver}"
 
 _musl_or_abihf() {
@@ -28,11 +29,11 @@ _musl_path() {
         fi
 }
 
-if [ ! -f v${cross_make_ver}.tar.gz ]; then
-    curl -LO "https://github.com/richfelker/musl-cross-make/archive/v${cross_make_ver}.tar.gz"
+if [ ! -f "${cross_make_ver}.tar.gz" ]; then
+    curl -LO "https://github.com/richfelker/musl-cross-make/archive/${cross_make_ver}.tar.gz"
 fi
 
-tar xvf "v${cross_make_ver}.tar.gz"
+tar xvf "${cross_make_ver}.tar.gz"
 cp config.mak $cross_make_dir
 
 cd $cross_make_dir
