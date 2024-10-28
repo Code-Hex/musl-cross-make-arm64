@@ -6,7 +6,7 @@ set -eu
 srcdir="$PWD"
 target_arch="aarch64 x86_64 armv7l"
 #cross_make_ver="v0.9.10"
-cross_make_ver="e149c31c48b4f4a4c9349ddf7bc0027b90245afc"
+cross_make_ver="fd6be58297ee21fcba89216ccd0d4aca1e3f1c5c"
 cross_make_dir="$srcdir/musl-cross-make-${cross_make_ver}"
 
 _musl_or_abihf() {
